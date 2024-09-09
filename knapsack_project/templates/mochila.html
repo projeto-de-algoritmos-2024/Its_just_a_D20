@@ -15,7 +15,6 @@
             font-family: 'Poppins', sans-serif;
         }
 
-        /* Cabeçalho com o nome do site */
         header {
             position: absolute;
             top: 10px;
@@ -25,79 +24,67 @@
             color: #00ffd2;
         }
 
-        /* Flexbox layout */
         .container-flex {
             display: flex;
             height: 100vh;
         }
 
-        /* Coluna do formulário */
         .form-column {
             flex: 1;
             display: flex;
             flex-direction: column;
-            justify-content: center; /* Centraliza verticalmente */
-            align-items: center; /* Centraliza horizontalmente */
-            padding: 10px; /* Reduzido para diminuir a altura */
-            width: 400px; /* Largura fixa do formulário */
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            width: 400px;
         }
 
-        /* Título do formulário */
         h2 {
             color: #00ffd2;
             font-weight: 400;
             font-size: 13px;
-            color: #00ffd2;  /* Cor do texto */
-    font-weight: 200; /* Negrito */
-    text-shadow:
-        0 0 10px #05ffd2,  /* Pequeno brilho ao redor do texto */
-        0 0 20px #05ffd2;  /* Um pouco mais de brilho */
 
-
-        /* Brilho ainda mais forte */
-    animation: typing 4s steps(30, end), blink-caret 0.75s step-end infinite;
+            text-shadow:
+                0 0 10px #05ffd2,
+                0 0 20px #05ffd2;
+            animation: typing 4s steps(30, end), blink-caret 0.75s step-end infinite;
         }
 
-        /* Estilo do cartão */
         .card {
             background-color: #1a1a1a;
             border: none;
-            padding: 30px; /* Ajustado para diminuir a altura */
+            padding: 30px;
             border-radius: 15px;
             color: #fff;
-            width: 100%; /* Ajusta a largura do cartão para preencher a coluna */
-            max-height: 400px; /* Altura máxima ajustável conforme necessário */
-            overflow-y: auto; /* Adiciona rolagem se o conteúdo exceder a altura máxima */
+            width: 100%;
+            max-height: 400px;
+            overflow-y: auto;
         }
 
-        /* Estilo dos campos de formulário */
         .form-control {
-            width: 100%; /* Ajusta a largura dos campos de formulário para preencher o container */
-            padding: 6px; /* Reduz o padding dos campos */
-            font-size: 14px; /* Reduz o tamanho da fonte */
+            width: 100%;
+            padding: 6px;
+            font-size: 14px;
         }
 
-        /* Reduz o tamanho das labels */
         .form-label {
-            font-size: 14px; /* Ajuste o tamanho da fonte das labels */
+            font-size: 14px;
         }
 
-        /* Estilo dos botões */
         .btn-primary {
             background-color: #00ffd2;
             border: none;
             color: #0d0d0d;
             font-weight: bold;
             transition: background-color 0.3s;
-            padding: 10px; /* Reduz o padding dos botões */
-            font-size: 14px; /* Ajusta o tamanho da fonte dos botões */
+            padding: 10px;
+            font-size: 14px;
         }
 
         .btn-primary:hover {
             background-color: #00bfa5;
         }
 
-        /* Coluna da foto */
         .photo-column {
             flex: 1;
             display: flex;
@@ -106,7 +93,7 @@
         }
 
         .profile-pic {
-            max-width: 50%; /* Reduzir o tamanho da imagem */
+            max-width: 50%;
             height: auto;
             border-radius: 50%;
             object-fit: cover;
@@ -124,41 +111,35 @@
 
         .nomes-direita {
             position: absolute;
-            top: 20px;   /* Distância do topo */
-            right: 20px; /* Distância da direita */
-            display: flex; /* Usar flexbox para alinhar os itens lado a lado */
-            gap: 20px; /* Espaçamento entre os nomes */
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 20px;
         }
 
-        /* Estilo individual para os links dos nomes */
         .nomes-direita a {
-            margin: 0;  /* Remove a margem padrão */
-            font-size: 16px;  /* Tamanho da fonte ajustável */
-            font-weight: 600; /* Negrito */
-            color: #00ffd2;    /* Cor personalizada para os links */
-            text-decoration: none; /* Remove o sublinhado */
-            transition: color 0.3s; /* Efeito de transição para a cor */
+            margin: 0;
+            font-size: 16px;
+            font-weight: 600;
+            color: #00ffd2;
+            text-decoration: none;
+            transition: color 0.3s;
         }
 
-        /* Estilo ao passar o mouse sobre os links */
         .nomes-direita a:hover {
-            color: #00bfa5; /* Cor ao passar o mouse */
+            color: #00bfa5;
         }
 
-        /* Remove a cor azul após clicar no link (estado :visited) */
         .nomes-direita a:visited {
-            color: #00ffd2; /* Manter a mesma cor dos links */
+            color: #00ffd2;
         }
 
-        /* Estilo para a animação de escrita */
         .typewriter span {
             border-right: 2px solid #00ffd2;
             white-space: nowrap;
             overflow: hidden;
             display: inline-block;
         }
-
-
     </style>
 </head>
 <body>
@@ -169,17 +150,13 @@
 
 <div class="nomes-direita">
     <a href="https://www.kaggle.com/datasets" target="_blank">Dataset para testes ---></a>
-    <a href="https://www.kaggle.com/datasets/patrickgomes/dungeons-and-dragons-5e-monsters" target="_blank">SKYRIM</a>
-    <a href="https://www.kaggle.com/code/rajkumar125/skyrim-weapons" target="_blank">D&D</a>
-
+    <a href="https://www.kaggle.com/datasets/patrickgomes/dungeons-and-dragons-5e-monsters" target="_blank">D&D Monsters</a>
+    <a href="https://www.kaggle.com/code/rajkumar125/skyrim-weapons" target="_blank">Skyrim Weapons</a>
 </div>
 
 <div class="container-flex">
-    <!-- Coluna do nome e formulário -->
     <div class="form-column">
-        <!-- Animação de escrita -->
         <h2 class="typewriter"><span id="animatedText"></span></h2>
-
 
         <div class="card">
             {% if messages %}
@@ -188,60 +165,52 @@
                 {{ message }}
                 {% endfor %}
             </div>
-
-
             {% endif %}
 
-            {% if messages %}
-            <div class="alert alert-danger">
-                {% for message in messages %}
-                {{ message }}
-                {% endfor %}
-            </div>
-            {% endif %}
             <form method="post" enctype="multipart/form-data">
                 {% csrf_token %}
 
-                <!-- Upload CSV -->
-                <div class="mb-2">
-                    <label for="id_csv_file" class="form-label"></label>
-                    {{ form.csv_file|as_crispy_field }}
+                <div class="mb-3">
+                    <label for="id_csv_file" class="form-label">Arquivo CSV</label>
+                    <input type="file" id="id_csv_file" name="csv_file" class="form-control" accept=".csv" onchange="handleFileUpload(event)">
                 </div>
 
-                <!-- Capacidade da mochila -->
                 <div class="mb-3">
                     <label for="id_capacidade" class="form-label"></label>
+
                     {{ form.capacidade|as_crispy_field }}
                 </div>
 
-                <!-- Coluna para os nomes dos itens -->
                 <div class="mb-3">
-                    <label for="id_nome_coluna" class="form-label"></label>
-                    {{ form.nome_coluna|as_crispy_field }}
+                    <label for="id_nome_coluna" class="form-label">Nome da Coluna</label>
+                    <select id="id_nome_coluna" name="nome_coluna" class="form-control">
+                        <option value="">Selecione uma coluna</option>
+                    </select>
                 </div>
 
-                <!-- Coluna para os pesos dos itens -->
                 <div class="mb-3">
-                    <label for="id_peso_coluna" class="form-label"></label>
-                    {{ form.peso_coluna|as_crispy_field }}
+                    <label for="id_peso_coluna" class="form-label">Coluna de Pesos</label>
+                    <select id="id_peso_coluna" name="peso_coluna" class="form-control">
+                        <option value="">Selecione uma coluna</option>
+                    </select>
                 </div>
 
-                <!-- Coluna para os valores dos itens -->
                 <div class="mb-3">
-                    <label for="id_valor_coluna" class="form-label"></label>
-                    {{ form.valor_coluna|as_crispy_field }}
+                    <label for="id_valor_coluna" class="form-label">Coluna de Valores</label>
+                    <select id="id_valor_coluna" name="valor_coluna" class="form-control">
+                        <option value="">Selecione uma coluna</option>
+                    </select>
                 </div>
 
-                <!-- Nomes dos itens -->
                 <div class="mb-3">
                     <label for="id_item_nomes" class="form-label"></label>
                     {{ form.item_nomes|as_crispy_field }}
                 </div>
+
                 <button type="submit" class="btn btn-primary w-100">Calcular</button>
             </form>
         </div>
 
-        <!-- Link de referência -->
         {% if resultado %}
         <div class="mt-3">
             <a href="{% url 'knapsack_app:resultado' %}" class="link-reference">Voltar para a página inicial</a>
@@ -249,16 +218,12 @@
         {% endif %}
     </div>
 
-    <!-- Coluna da foto -->
     <div class="photo-column">
         <img src="static/imagens/OIG4.jpeg" alt="Profile Picture" class="profile-pic">
     </div>
 </div>
 
 <script>
-
-
-    // Função para simular o efeito de digitação
     function typeWriter(text, elementId, speed) {
         let i = 0;
         function type() {
@@ -271,11 +236,42 @@
         type();
     }
 
-    // Iniciar a animação de escrita quando a página carregar
     window.onload = function() {
-        const text = "bem vindo ao melhor escolhar para gestão do rpg"; // O texto que será animado
+        const text = "Bem-vindo ao melhor gerenciamento de RPG"; // Texto animado
         typeWriter(text, "animatedText", 50); // Velocidade da animação
     };
+
+    function handleFileUpload(event) {
+        const file = event.target.files[0];
+        if (file && file.type === "text/csv") {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const text = e.target.result;
+                const lines = text.split('\n');
+                const headers = lines[0].split(',');
+
+                const nomeColunaSelect = document.getElementById('id_nome_coluna');
+                const pesoColunaSelect = document.getElementById('id_peso_coluna');
+                const valorColunaSelect = document.getElementById('id_valor_coluna');
+
+                nomeColunaSelect.innerHTML = '<option value="">Selecione uma coluna</option>';
+                pesoColunaSelect.innerHTML = '<option value="">Selecione uma coluna</option>';
+                valorColunaSelect.innerHTML = '<option value="">Selecione uma coluna</option>';
+
+                headers.forEach(header => {
+                    const option = document.createElement('option');
+                    option.value = header;
+                    option.textContent = header;
+                    nomeColunaSelect.appendChild(option);
+                    pesoColunaSelect.appendChild(option.cloneNode(true));
+                    valorColunaSelect.appendChild(option.cloneNode(true));
+                });
+            };
+            reader.readAsText(file);
+        } else {
+            alert('Por favor, selecione um arquivo CSV.');
+        }
+    }
 </script>
 
 </body>
