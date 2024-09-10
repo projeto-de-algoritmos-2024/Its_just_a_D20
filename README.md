@@ -99,7 +99,7 @@ Itens Específico: para otimizar seus itens, você tem inserir os nomes dos iten
 
 
 exemplo:Aboleth, Acolyte, Adult Black Dragon, Adult Blue Dragon, Adult Brass Dragon, Adult Bronze Dragon, Adult Copper Dragon, Adult Gold Dragon, Adult Green Dragon, Adult Red Dragon
-=======
+
 
 ---
 
