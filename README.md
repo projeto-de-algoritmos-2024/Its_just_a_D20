@@ -81,16 +81,18 @@ python manage.py runserver<br>
 Abra seu navegador e vá para http://127.0.0.1:8000/ para acessar a aplicação web
 
 ## Uso 
-Após acessar a aplicação:
+Após acessar a aplicação:<br>
 
-Você verá uma página com um formulário que permite o upload de um arquivo CSV.
-No formulário, insira o arquivo CSV que contém os itens que deseja otimizar com o algoritmo de Knapsack.
-Preencha os seguintes campos do formulário:
-Capacidade da Mochila: O valor máximo de capacidade que a mochila pode carregar.
-Nome da Coluna: O nome da coluna no CSV que contém os nomes dos itens (ex: 'Nome').
-Coluna de Peso: O nome da coluna no CSV que contém os pesos dos itens (ex: 'Peso').
-Coluna de Valor: O nome da coluna no CSV que contém os valores dos itens (ex: 'Valor').
-Itens Específicos (Opcional): Se quiser otimizar para itens específicos, você pode inserir os nomes dos itens separados por vírgula
+Você verá uma página com um formulário que permite o upload de um arquivo CSV.<br>
+No formulário, insira o arquivo CSV que contém os itens que deseja otimizar com o algoritmo de Knapsack.<br>
+Preencha os seguintes campos do formulário:<br>
+Capacidade da Mochila: O valor máximo de capacidade que a mochila pode carregar.<br>
+Nome da Coluna: O nome da coluna no CSV que contém os nomes dos itens (ex: 'Nome').<br>
+Coluna de Peso: O nome da coluna no CSV que contém os pesos dos itens (ex: 'Peso').<br>
+Coluna de Valor: O nome da coluna no CSV que contém os valores dos itens (ex: 'Valor').<br>
+Itens Específico: para otimizar seus itens, você tem inserir os nomes dos itens separados por vírgula<br>
+
+exemplo:Aboleth, Acolyte, Adult Black Dragon, Adult Blue Dragon, Adult Brass Dragon, Adult Bronze Dragon, Adult Copper Dragon, Adult Gold Dragon, Adult Green Dragon, Adult Red Dragon
 
 ---
 
