@@ -1,6 +1,6 @@
 # It's just a D20
 
-**Número da Lista**: X<br>
+**Número da Lista**: 29<br>
 **Conteúdo da Disciplina**: Programação Dinâmica (PD)<br>
 
 ## Alunos
