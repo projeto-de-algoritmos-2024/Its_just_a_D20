@@ -29,7 +29,7 @@ def knapsack(capacidade, pesos, valores, n):
                     item_selecionado[i][w] = item_selecionado[i - 1][w]
             else:
                 # Se o item atual não pode ser incluído (peso maior que a capacidade w),
-                dp[i][w] = dp[i - 1][w]
+                dp[i][w] = dp[i - 1][w]# mantém o valor máximo anterior
                 item_selecionado[i][w] = item_selecionado[i - 1][w]
 
     # Retorna o valor máximo possível que pode ser carregado na mochila (dp[n][capacidade])
@@ -122,7 +122,6 @@ def seu_view(request):
             # Processar os dados do formulário
             pass
         else:
-            # Adicionar mensagem de erro
             messages.error(request, 'Por favor, preencha todos os campos obrigatórios.')
     else:
         form = KnapsackForm()
