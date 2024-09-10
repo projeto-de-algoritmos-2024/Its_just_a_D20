@@ -77,7 +77,8 @@ Adicione 3 ou mais screenshots do projeto em funcionamento.
 **Framework**:Django<br>
 pip install django pandas<br>
 pip install django-crispy-forms crispy-bootstrap5<br>
-python manage.py runserver<br>
+Navegue até o diretório knapsack_project com o comando cd .\knapsack_project\ <br>
+Logo após executar o comando python manage.py runserver<br>
 Abra seu navegador e vá para http://127.0.0.1:8000/ para acessar a aplicação web
 
 ## Uso 
