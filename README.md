@@ -9,6 +9,10 @@
 | 22/1008786  | Mateus Villela Consorte       |
 | 22/1008679   | Pablo Serra Carvalho               |
 
+## Prólogo
+
+Imagine uma situação em que você tenha que jogar um dado para definir o quão bom sua mochila será organizada, isso definirá o seu valor. Normalmente, ao lançar o dado de 20 lados, você terá 5% de tirar 20 (maior valor). Entretanto, It's Just A D20 garantirá 100% em todas as vezes em que for organizar sua mochila, seja ela composta de itens, seja ela composto do que mais você quiser, ele sempre te retornará o ajuste ótimo da mochila (knapsack).
+
 ## Visão Geral
 
 No universo dos jogos de RPG (Role-Playing Game), a imersão e as escolhas estratégicas são fundamentais. RPGs envolvem uma narrativa colaborativa, onde os jogadores devem tomar decisões que afetam diretamente o desenrolar da história. Um dos principais desafios é a gestão de recursos, especialmente em relação aos itens que os personagens carregam em suas mochilas. Escolher os itens adequados pode ser a diferença entre a vitória e a derrota em uma campanha. 
