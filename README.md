@@ -77,6 +77,9 @@ Por fim, **"It's just a D20"** não é apenas uma ferramenta útil para jogadore
 Adicione 3 ou mais screenshots do projeto em funcionamento.
 ![Captura de tela 2024-09-10 001312](https://github.com/user-attachments/assets/4f23eb89-438e-4900-a0ee-c14421c67e8d)
 ![Captura de Tela (6)](https://github.com/user-attachments/assets/8de85469-231f-4b5e-b0b0-3b7fa2b11744)
+![Captura de tela 2024-09-10 001437](https://github.com/user-attachments/assets/42c7f08a-ac24-4bf6-9c0d-4e133133acb7)
+![Captura de Tela (8)](https://github.com/user-attachments/assets/e783fb2f-94d9-4c62-9c36-e5f80531efae)
+
 
 ## Instalação 
 **Linguagem**: python<br>
