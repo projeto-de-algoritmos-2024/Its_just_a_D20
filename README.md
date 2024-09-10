@@ -76,8 +76,8 @@ Adicione 3 ou mais screenshots do projeto em funcionamento.
 **Linguagem**: python<br>
 **Framework**:Django<br>
 pip install django pandas
-pip install django-crispy-forms crispy-bootstrap5
-python manage.py runserver
+pip install django-crispy-forms crispy-bootstrap5<br>
+python manage.py runserver<br>
 Abra seu navegador e vá para http://127.0.0.1:8000/ para acessar a aplicação web
 
 ## Uso 
