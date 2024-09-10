@@ -94,7 +94,7 @@ Abra seu navegador e vá para http://127.0.0.1:8000/ para acessar a aplicação 
 ## Uso 
 Após acessar a aplicação:<br>
 [dataset para teste](https://www.kaggle.com/datasets/patrickgomes/dungeons-and-dragons-5e-monsters
-).
+).<br>
 Você verá uma página com um formulário que permite o upload de um arquivo CSV.<br>
 No formulário, insira o arquivo CSV que contém os itens que deseja otimizar com o algoritmo de Knapsack.<br>
 Preencha os seguintes campos do formulário:<br>
