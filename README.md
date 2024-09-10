@@ -79,6 +79,7 @@ Adicione 3 ou mais screenshots do projeto em funcionamento.
 ![Captura de Tela (6)](https://github.com/user-attachments/assets/8de85469-231f-4b5e-b0b0-3b7fa2b11744)
 ![Captura de tela 2024-09-10 001437](https://github.com/user-attachments/assets/42c7f08a-ac24-4bf6-9c0d-4e133133acb7)
 ![Captura de Tela (8)](https://github.com/user-attachments/assets/e783fb2f-94d9-4c62-9c36-e5f80531efae)
+![Captura de tela 2024-09-10 001532](https://github.com/user-attachments/assets/34528286-6e6a-4911-9758-25a6f0070ac2)
 
 
 ## Instalação 
@@ -92,7 +93,8 @@ Abra seu navegador e vá para http://127.0.0.1:8000/ para acessar a aplicação 
 
 ## Uso 
 Após acessar a aplicação:<br>
-
+[dataset para teste](https://www.kaggle.com/datasets/patrickgomes/dungeons-and-dragons-5e-monsters
+).
 Você verá uma página com um formulário que permite o upload de um arquivo CSV.<br>
 No formulário, insira o arquivo CSV que contém os itens que deseja otimizar com o algoritmo de Knapsack.<br>
 Preencha os seguintes campos do formulário:<br>
