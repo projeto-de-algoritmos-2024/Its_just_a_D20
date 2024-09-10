@@ -97,7 +97,9 @@ Coluna de Peso: O nome da coluna no CSV que contém os pesos dos itens (ex: 'Pes
 Coluna de Valor: O nome da coluna no CSV que contém os valores dos itens (ex: 'Valor').<br>
 Itens Específico: para otimizar seus itens, você tem inserir os nomes dos itens separados por vírgula<br>
 
+
 exemplo:Aboleth, Acolyte, Adult Black Dragon, Adult Blue Dragon, Adult Brass Dragon, Adult Bronze Dragon, Adult Copper Dragon, Adult Gold Dragon, Adult Green Dragon, Adult Red Dragon
+=======
 
 ---
 
@@ -110,7 +112,5 @@ Referências:
 - KNUTH, D. (1997). "The Art of Computer Programming". Addison-Wesley.
 - CORMEN, T. et al. (2022). "Introduction to Algorithms". MIT Press.
 - SEDGEWICK, R. (2011). "Algorithms".
-
-
 
 
