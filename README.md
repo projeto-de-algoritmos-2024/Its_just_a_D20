@@ -7,7 +7,7 @@
 | Matrícula   | Aluno                        |
 | ----------- | ---------------------------- |
 | 22/1008786  | Mateus Villela Consorte       |
-| xx/xxxxxx   | xxxx xxxx xxxxx               |
+| 22/1008679   | Pablo Serra Carvalho               |
 
 ## Visão Geral
 
@@ -73,9 +73,12 @@ Por fim, **"It's just a D20"** não é apenas uma ferramenta útil para jogadore
 Adicione 3 ou mais screenshots do projeto em funcionamento.
 
 ## Instalação 
-**Linguagem**: xxxxxx<br>
-**Framework**: (caso exista)<br>
-Descreva os pré-requisitos para rodar o seu projeto e os comandos necessários.
+**Linguagem**: python<br>
+**Framework**:Django<br>
+pip install django pandas
+pip install django-crispy-forms crispy-bootstrap5
+python manage.py runserver
+Abra seu navegador e vá para http://127.0.0.1:8000/ para acessar a aplicação web
 
 ## Uso 
 Explique como usar seu projeto caso haja algum passo a passo após o comando de execução.
