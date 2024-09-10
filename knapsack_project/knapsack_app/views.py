@@ -14,32 +14,49 @@ def extrair_numero(string):
 def knapsack(capacidade, pesos, valores, n):
     dp = [[0 for _ in range(capacidade + 1)] for _ in range(n + 1)]
     item_selecionado = [[[] for _ in range(capacidade + 1)] for _ in range(n + 1)]
-
     for i in range(1, n + 1):
+        # Laço para percorrer todas as capacidades possíveis da mochila (0 até a capacidade máxima)
         for w in range(capacidade + 1):
+            # Verifica se o peso do item atual (pesos[i-1]) é menor ou igual à capacidade atual (w)
             if pesos[i - 1] <= w:
+                # Se incluir o item atual resulta em um valor maior do que não incluí-lo
                 if valores[i - 1] + dp[i - 1][w - pesos[i - 1]] > dp[i - 1][w]:
                     dp[i][w] = valores[i - 1] + dp[i - 1][w - pesos[i - 1]]
                     item_selecionado[i][w] = item_selecionado[i - 1][w - pesos[i - 1]] + [i - 1]
                 else:
+                    # Caso contrário, mantém o valor máximo anterior sem incluir o item
                     dp[i][w] = dp[i - 1][w]
                     item_selecionado[i][w] = item_selecionado[i - 1][w]
             else:
+                # Se o item atual não pode ser incluído (peso maior que a capacidade w),
                 dp[i][w] = dp[i - 1][w]
                 item_selecionado[i][w] = item_selecionado[i - 1][w]
 
+    # Retorna o valor máximo possível que pode ser carregado na mochila (dp[n][capacidade])
+    # e a lista de itens selecionados para alcançar esse valor (item_selecionado[n][capacidade])
     return dp[n][capacidade], item_selecionado[n][capacidade]
 
 def processar_csv(file, nome_coluna, peso_coluna, valor_coluna):
+    # Lê o arquivo CSV e carrega os dados em um DataFrame do pandas
     df = pd.read_csv(file)
+    # Preenche os valores nulos da coluna de nomes com strings vazias ('')
     df[nome_coluna] = df[nome_coluna].fillna('')
+    # Aplica a função 'extrair_numero' na coluna de peso para extrair apenas os números das strings
     df[peso_coluna] = df[peso_coluna].apply(extrair_numero)
+    # Aplica a função 'extrair_numero' na coluna de valor para extrair apenas os números das strings
     df[valor_coluna] = df[valor_coluna].apply(extrair_numero)
+    # Retorna o DataFrame processado
     return df
 
+# Função para exibir o resultado final após a execução do algoritmo de Knapsack
 def resultado_view(request):
+    # Recupera o resultado do valor máximo da mochila armazenado na sessão
     resultado = request.session.get('resultado')
+    
+    # Recupera os itens selecionados também armazenados na sessão
     itens_selecionados = request.session.get('itens_selecionados')
+    
+    # Renderiza a página de resultados ('resultado.html') e passa o resultado e os itens selecionados como contexto
     return render(request, 'resultado.html', {
         'resultado': resultado,
         'itens_selecionados': itens_selecionados
