@@ -63,22 +63,28 @@ def resultado_view(request):
     })
 
 
-
 def knapsack_view(request):
     if request.method == 'POST':
         form = KnapsackForm(request.POST, request.FILES)
+
+        # Recupera os valores do campo hidden 'values'
+        items_list = request.POST.get('values', '').split(',')   # Pega a string concatenada e Transforma em lista
+
         if form.is_valid():
-            csv_file = request.FILES.get('csv_file')  # Use get() para evitar KeyError
+            csv_file = form.cleaned_data['csv_file']
+            #csv_file = request.FILES.get('csv_file')  # Use get() para evitar KeyError
 
             if not csv_file:
                 messages.error(request, 'Você deve enviar um arquivo CSV.')
                 return render(request, 'mochila.html', {'form': form})
+            
             csv_file = request.FILES['csv_file']
             capacidade = form.cleaned_data['capacidade']
             nome_coluna = form.cleaned_data['nome_coluna']
             peso_coluna = form.cleaned_data['peso_coluna']
             valor_coluna = form.cleaned_data['valor_coluna']
-            item_nomes = form.cleaned_data.get('item_nomes', '').split(',')
+            #item_nomes = form.cleaned_data.get('item_nomes', '').split(',')
+            item_nomes = items_list
 
             df = processar_csv(csv_file, nome_coluna, peso_coluna, valor_coluna)
 
@@ -90,39 +96,15 @@ def knapsack_view(request):
             nomes = df[nome_coluna].tolist()
 
             max_valor, itens_selecionados = knapsack(capacidade, pesos, valores, len(valores))
-            itens_nomes = [nomes[i] for i in itens_selecionados]
-            resultado = f'O valor máximo que pode ser carregado é: {max_valor}.'
-            itens_selecionados = f'Itens selecionados: {", ".join(itens_nomes)}'
+            itens = [[nomes[i], pesos[i], valores[i]] for i in itens_selecionados]
+            resultado = f'O valor máximo que pode ser carregado é: {max_valor} {valor_coluna}.'
+            #itens_selecionados = f'Itens selecionados: {", ".join(itens_nomes)}'
 
             # Salvar resultados na sessão
             request.session['resultado'] = resultado
-            request.session['itens_selecionados'] = itens_selecionados
+            request.session['itens_selecionados'] = itens #itens_selecionados
 
             return redirect('resultado')  # Redirecionar para a view de resultados
-    else:
-        form = KnapsackForm()
-
-    return render(request, 'mochila.html', {'form': form})
-
-
-
-def resultado_view(request):
-    resultado = request.session.get('resultado')
-    itens_selecionados = request.session.get('itens_selecionados')
-    return render(request, 'resultado.html', {
-        'resultado': resultado,
-        'itens_selecionados': itens_selecionados
-    })
-from .forms import KnapsackForm
-
-def seu_view(request):
-    if request.method == 'POST':
-        form = KnapsackForm(request.POST, request.FILES)
-        if form.is_valid():
-            # Processar os dados do formulário
-            pass
-        else:
-            messages.error(request, 'Por favor, preencha todos os campos obrigatórios.')
     else:
         form = KnapsackForm()
 

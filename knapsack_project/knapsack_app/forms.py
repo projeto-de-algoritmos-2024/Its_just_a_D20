@@ -6,4 +6,5 @@ class KnapsackForm(forms.Form):
     nome_coluna = forms.CharField(label="Coluna para os nomes dos itens", required=True)
     peso_coluna = forms.CharField(label="Coluna para o peso dos itens", required=True)
     valor_coluna = forms.CharField(label="Coluna para o valor dos itens", required=True)
-    item_nomes = forms.CharField(label="Nomes dos itens (separados por vírgula)", required=True)
+    #item_nomes = forms.JSONField(label="Nomes dos itens (separados por vírgula)", required=True)
+    # JSONField
