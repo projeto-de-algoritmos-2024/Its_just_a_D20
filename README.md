@@ -105,8 +105,9 @@ Coluna de Valor: O nome da coluna no CSV que contém os valores dos itens (ex: '
 Itens Específico: para otimizar seus itens, você tem inserir os nomes dos itens separados por vírgula<br>
 
 
-exemplo:Aboleth, Acolyte, Adult Black Dragon, Adult Blue Dragon, Adult Brass Dragon, Adult Bronze Dragon, Adult Copper Dragon, Adult Gold Dragon, Adult Green Dragon, Adult Red Dragon
+exemplo:Aboleth, Acolyte, Adult Black Dragon, Adult Blue Dragon, Adult Brass Dragon, Adult Bronze Dragon, Adult Copper Dragon, Adult Gold Dragon, Adult Green Dragon, Adult Red Dragon<br><br>
 
+[Link para o vídeo de apresentação do projeto](https://youtu.be/MvOiuasSpZU).
 
 ---
 
