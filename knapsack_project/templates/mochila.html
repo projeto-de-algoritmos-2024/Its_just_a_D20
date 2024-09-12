@@ -203,9 +203,29 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="id_item_nomes" class="form-label"></label>
-                    {{ form.item_nomes|as_crispy_field }}
+                    <label for="id_item_nomes" class="form-label">Nome dos Itens</label>
+                    <div class="input-group">
+                        <input type="text" id="id_item_nomes" list="nomes_opcoes" placeholder="Digite para selecionar" class="form-control">
+                        <datalist id="nomes_opcoes">
+                            <!-- opções via JavaScript -->
+                        </datalist>
+                        <button type="button" class="btn btn-success" onclick=addItem()>+</button>
+                    </div>
                 </div>
+
+                <!-- Tabela que vai exibir os itens -->
+                <table class="table table-dark table-striped" id="items-table">
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Os itens serão adicionados aqui -->
+                    </tbody>
+                </table>
+                <input type="hidden" name="values" id="hiddenValues">
 
                 <button type="submit" class="btn btn-primary w-100">Calcular</button>
             </form>
@@ -224,6 +244,62 @@
 </div>
 
 <script>
+    // Função para adicionar um item à tabela
+    function addItem() {
+        const inputElement = document.getElementById('id_item_nomes');
+        const selectedValue = inputElement.value;
+
+        if (selectedValue) {
+            const tableBody = document.getElementById('items-table').querySelector('tbody');
+            const newRow = document.createElement('tr');
+
+            newRow.innerHTML = `
+                <td>${selectedValue}</td>
+                <td><button type="button" class="btn btn-danger" onclick="removeItem(this)">-</button></td>
+            `;
+
+            tableBody.appendChild(newRow);
+            inputElement.value = '';  // Limpa o campo de entrada
+        } else {
+            alert('Por favor, selecione um item para adicionar.');
+        }
+    }
+
+    // Função para remover um item da tabela
+    function removeItem(button) {
+        const row = button.closest('tr');
+        row.remove();
+    }
+
+    document.querySelector('form').addEventListener('submit', function(event) {
+        concatenateItems();  // Chama a função para preencher o campo oculto
+        var values = [];
+        var cells = document.querySelectorAll('#items-table tbody tr td:first-child');
+        cells.forEach(function(cell) {
+            values.push(cell.textContent.trim());
+        });
+
+        // Preencher o campo hidden com os valores capturados
+        document.getElementById('hiddenValues').value = values.join(',');
+    });
+
+    // Função que será chamada no submit para concatenar os itens da tabela
+    function concatenateItems() {
+        const tableBody = document.getElementById('items-table').querySelector('tbody');
+        const rows = tableBody.querySelectorAll('tr');
+        const items = [];
+
+        rows.forEach(row => {
+            const item = row.querySelector('td').textContent;
+            items.push(item);
+        });
+
+        // Atualiza o campo hidden com os itens concatenados
+        const hiddenValuesField = document.getElementById('hiddenValues');
+        hiddenValuesField.value = items.join(','); // Armazena como uma string separada por vírgulas
+    }
+
+
     function typeWriter(text, elementId, speed) {
         let i = 0;
         function type() {
@@ -253,11 +329,14 @@
                 const nomeColunaSelect = document.getElementById('id_nome_coluna');
                 const pesoColunaSelect = document.getElementById('id_peso_coluna');
                 const valorColunaSelect = document.getElementById('id_valor_coluna');
+                const itemNomesInput = document.getElementById('id_item_nomes'); // Campo de input
+                const datalist = document.getElementById('nomes_opcoes'); // Datalist para sugestões
 
                 nomeColunaSelect.innerHTML = '<option value="">Selecione uma coluna</option>';
                 pesoColunaSelect.innerHTML = '<option value="">Selecione uma coluna</option>';
                 valorColunaSelect.innerHTML = '<option value="">Selecione uma coluna</option>';
 
+                // Preenche as opções das colunas (nome, peso, valor)
                 headers.forEach(header => {
                     const option = document.createElement('option');
                     option.value = header;
@@ -266,12 +345,39 @@
                     pesoColunaSelect.appendChild(option.cloneNode(true));
                     valorColunaSelect.appendChild(option.cloneNode(true));
                 });
+
+                // Evento para quando o usuário seleciona a coluna "Nome"
+                nomeColunaSelect.addEventListener('change', function() {
+                    const selectedColumnIndex = headers.indexOf(nomeColunaSelect.value);
+                    if (selectedColumnIndex !== -1) {
+                        const nomes = [];
+
+                        // Limpa o datalist antes de preencher
+                        datalist.innerHTML = '';
+
+                        // Itera sobre as linhas e coleta os nomes da coluna selecionada
+                        for (let i = 1; i < lines.length; i++) {
+                            const row = lines[i].split(',');
+                            const nome = row[selectedColumnIndex].trim();
+                            if (nome) {
+                                nomes.push(nome); // Adiciona nome à lista
+
+                                // Cria uma nova opção no datalist para o nome
+                                const option = document.createElement('option');
+                                option.value = nome;
+                                datalist.appendChild(option);
+                            }
+                        }
+                    }
+                });
             };
+
             reader.readAsText(file);
         } else {
             alert('Por favor, selecione um arquivo CSV.');
         }
     }
+
 </script>
 
 </body>
